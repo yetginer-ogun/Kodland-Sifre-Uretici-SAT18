@@ -16,7 +16,7 @@ def test_password_length():
 def test_password_recurring():
     password1 = generate_password(100)
     password2 = generate_password(100)
-    assert password1 == password2
+    assert password1 != password2
 
 """
 Aşağıda önerilenlerden birini kullanarak başka bir test yazın. Alternatif olarak, kendi testinizi de oluşturabilirsiniz!
