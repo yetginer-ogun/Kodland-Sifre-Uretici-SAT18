@@ -5,8 +5,11 @@ def generate_password(length=12):
     """Belirtilen uzunlukta rastgele bir şifre oluşturur."""
     characters = string.ascii_letters + string.digits + string.punctuation
     password = ''
-    for i in range(length):
-        password += random.choice(characters)
+    try:
+        for i in range(length):
+            password += random.choice(characters)
+    except:
+        passoword = "FAIL"
     return password
 
 # Kullanım örneği

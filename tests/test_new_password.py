@@ -1,5 +1,4 @@
 import string
-import pytest
 from password.new_password import *
 
 def test_password_characters():
@@ -17,6 +16,12 @@ def test_password_recurring():
     password1 = generate_password(100)
     password2 = generate_password(100)
     assert password1 != password2
+
+def test_password_long():
+    len = 2 ** 30
+    password = generate_password(len)
+    assert password != "FAIL"
+
 
 """
 Aşağıda önerilenlerden birini kullanarak başka bir test yazın. Alternatif olarak, kendi testinizi de oluşturabilirsiniz!
