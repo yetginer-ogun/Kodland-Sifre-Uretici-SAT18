@@ -1,5 +1,6 @@
 import string
-from password.new_password import generate_password
+import pytest
+from password.new_password import *
 
 def test_password_characters():
     """Şifre oluşturulurken yalnızca geçerli karakterlerin kullanıldığını test eder"""
@@ -7,6 +8,15 @@ def test_password_characters():
     password = generate_password(100)  # Daha güvenli bir doğrulama için uzun bir şifre oluşturuluyor
     for char in password:
         assert char in valid_characters
+
+def test_password_length():
+    password = generate_password(100)
+    assert len(password) == 100
+
+def test_password_recurring():
+    password1 = generate_password(100)
+    password2 = generate_password(100)
+    assert password1 == password2
 
 """
 Aşağıda önerilenlerden birini kullanarak başka bir test yazın. Alternatif olarak, kendi testinizi de oluşturabilirsiniz!
