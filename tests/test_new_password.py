@@ -19,3 +19,14 @@ Daha fazla test yazabilirseniz harika olur!
 def test_password_lenght():
     password = generate_password(100)
     assert len(password) == 100
+
+
+def test_password_isrepeating():
+    password1 = generate_password(50)
+    password2 = generate_password(50)
+    assert password1 != password2
+
+def test_password_verlong():
+    a = 2 ** 25
+    print(a)
+    assert generate_password(a) != "Başaramadın"
