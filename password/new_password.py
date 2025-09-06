@@ -9,7 +9,7 @@ def generate_password(length=12):
         for i in range(length):
             password += random.choice(characters)
     except:
-        passoword = "FAIL"
+        password = "FAIL"
     return password
 
 # Kullanım örneği

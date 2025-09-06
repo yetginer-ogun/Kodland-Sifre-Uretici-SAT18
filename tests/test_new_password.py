@@ -18,7 +18,7 @@ def test_password_recurring():
     assert password1 != password2
 
 def test_password_long():
-    len = 2 ** 30
+    len = 2 ** 129
     password = generate_password(len)
     assert password != "FAIL"
 
